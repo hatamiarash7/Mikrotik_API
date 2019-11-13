@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 /**
  * Mikhmon Light theme for Highcharts JS
  * @author Laksamadi Guko

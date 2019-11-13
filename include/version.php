@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 if (!isset($_SESSION["mikhmon"])) {
     header("Location:../admin.php?id=login");
   } else {

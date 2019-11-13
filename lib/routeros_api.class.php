@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 /*****************************
  *
  * RouterOS PHP API class v1.6

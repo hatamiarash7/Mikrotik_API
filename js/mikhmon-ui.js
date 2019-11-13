@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 var sidenav = document.getElementById("sidenav");
 var main = document.getElementById("main");
 var openNav = document.getElementById("openNav");

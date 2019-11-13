@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 // function  format bytes
 function formatBytes($size, $decimals = 0){
 $unit = array(

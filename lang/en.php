@@ -1,5 +1,9 @@
 <?php
-$langid="en"; 
+/**
+ * Copyright (c) 2019. Arash Hatami
+ */
+
+$langid="en";
 $langname = "English";
 $language = "Language";
 

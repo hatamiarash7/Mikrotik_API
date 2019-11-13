@@ -1,4 +1,8 @@
 <?php
+/**
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 $isocodelang = array(
 "ab"=>"Abkhazian",
 "aa"=>"Afar",

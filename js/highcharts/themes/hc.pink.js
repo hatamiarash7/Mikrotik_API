@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2019. Arash Hatami
+ */
+
 /**
  * Mikhmon Pink theme for Highcharts JS
  * @author Laksamadi Guko
