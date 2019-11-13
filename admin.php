@@ -66,7 +66,7 @@ include('./include/readcfg.php');
 include_once('./lib/routeros_api.class.php');
 include_once('./lib/formatbytesbites.php');
 ?>
-    
+
 <?php
 if ($id == "login" || substr($url, -1) == "p") {
 
@@ -77,12 +77,12 @@ if ($id == "login" || substr($url, -1) == "p") {
       $_SESSION["mikhmon"] = $user;
 
         echo "<script>window.location='./admin.php?id=sessions'</script>";
-    
+
     } else {
       $error = '<div style="width: 100%; padding:5px 0px 5px 0px; border-radius:5px;" class="bg-danger"><i class="fa fa-ban"></i> Alert!<br>Invalid username or password.</div>';
     }
   }
-  
+
 
   include_once('./include/login.php');
 } elseif (!isset($_SESSION["mikhmon"])) {
@@ -114,7 +114,7 @@ if ($id == "login" || substr($url, -1) == "p") {
     };
     </script>';
 } elseif ($id == "connect"  && !empty($session)) {
-  ini_set("max_execution_time",5);  
+  ini_set("max_execution_time",5);
   include_once('./include/menu.php');
   $API = new RouterosAPI();
   $API->debug = false;
@@ -125,9 +125,9 @@ if ($id == "login" || substr($url, -1) == "p") {
     $_SESSION["connect"] = "<b class='text-red'>Not Connected</b>";
     $nl = '\n';
     if ($currency == in_array($currency, $cekindo['indo'])) {
-      echo "<script>alert('Mikhmon not connected!".$nl."Silakan periksa kembali IP, User, Password dan port API harus enable.".$nl."Jika menggunakan koneksi VPN, pastikan VPN tersebut terkoneksi.')</script>";
+      echo "<script>alert('Service not connected!".$nl."Silakan periksa kembali IP, User, Password dan port API harus enable.".$nl."Jika menggunakan koneksi VPN, pastikan VPN tersebut terkoneksi.')</script>";
     }else{
-      echo "<script>alert('Mikhmon not connected!".$nl."Please check the IP, User, Password and port API must be enabled.')</script>";
+      echo "<script>alert('Service not connected!".$nl."Please check the IP, User, Password and port API must be enabled.')</script>";
     }
     if($c == "settings"){
       echo "<script>window.location='./admin.php?id=settings&session=" . $session . "'</script>";
