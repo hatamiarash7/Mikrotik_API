@@ -37,11 +37,11 @@ class RouterosAPI
     public function isIterable($var)
     {
         return $var !== null
-                && (is_array($var)
+            && (is_array($var)
                 || $var instanceof Traversable
                 || $var instanceof Iterator
                 || $var instanceof IteratorAggregate
-                );
+            );
     }
 
     /**
@@ -106,19 +106,30 @@ class RouterosAPI
             $this->socket = @stream_socket_client($PROTOCOL . $ip.':'. $this->port, $this->error_no, $this->error_str, $this->timeout, STREAM_CLIENT_CONNECT,$context);
             if ($this->socket) {
                 socket_set_timeout($this->socket, $this->timeout);
-                $this->write('/login');
+                $this->write('/login', false);
+                $this->write('=name=' . $login, false);
+                $this->write('=password=' . $password);
                 $RESPONSE = $this->read(false);
-                if (isset($RESPONSE[0]) && $RESPONSE[0] == '!done') {
-                    $MATCHES = array();
-                    if (preg_match_all('/[^=]+/i', $RESPONSE[1], $MATCHES)) {
-                        if ($MATCHES[0][0] == 'ret' && strlen($MATCHES[0][1]) == 32) {
-                            $this->write('/login', false);
-                            $this->write('=name=' . $login, false);
-                            $this->write('=response=00' . md5(chr(0) . $password . pack('H*', $MATCHES[0][1])));
-                            $RESPONSE = $this->read(false);
-                            if (isset($RESPONSE[0]) && $RESPONSE[0] == '!done') {
-                                $this->connected = true;
-                                break;
+                if (isset($RESPONSE[0])) {
+                    if ($RESPONSE[0] == '!done') {
+                        if (!isset($RESPONSE[1])) {
+                            // Login method post-v6.43
+                            $this->connected = true;
+                            break;
+                        } else {
+                            // Login method pre-v6.43
+                            $MATCHES = array();
+                            if (preg_match_all('/[^=]+/i', $RESPONSE[1], $MATCHES)) {
+                                if ($MATCHES[0][0] == 'ret' && strlen($MATCHES[0][1]) == 32) {
+                                    $this->write('/login', false);
+                                    $this->write('=name=' . $login, false);
+                                    $this->write('=response=00' . md5(chr(0) . $password . pack('H*', $MATCHES[0][1])));
+                                    $RESPONSE = $this->read(false);
+                                    if (isset($RESPONSE[0]) && $RESPONSE[0] == '!done') {
+                                        $this->connected = true;
+                                        break;
+                                    }
+                                }
                             }
                         }
                     }
@@ -491,7 +502,7 @@ if(strlen($dtm) == "2" && substr($dtm, -1) == "s"){
     $format = $day." 0".substr($dtm, 0,-1).":00:00";
 }elseif(strlen($dtm) == "3" && substr($dtm, -1) == "h"){
     $format = $day." ".substr($dtm, 0,-1).":00:00";
- 
+
 //minutes -secs
 }elseif(strlen($dtm) == "4" && substr($dtm, -1) == "s" && substr($dtm,1,-2) == "m"){
     $format = $day." "."00:0".substr($dtm, 0,1).":0".substr($dtm, 2,-1);
