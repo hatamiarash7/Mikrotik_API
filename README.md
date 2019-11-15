@@ -10,6 +10,12 @@ Mikrotik Dashboard specially for Hotspot and manage router, a Dockerized version
 
 Open `http://localhost:<published_port>` and login with **admin:admin**
 
+## Changelog
+
+- Nov 15 - 2019  
+-- Update to last version of [BenMenking/routeros-api](https://github.com/BenMenking/routeros-api)
+-- Support RouterOS 6.43+
+
 ## Support
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D1WGU9)
