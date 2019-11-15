@@ -1,4 +1,4 @@
-# Mikrotik_API
+# Mikrotik API - Dashboard
 
 Mikrotik Dashboard specially for Hotspot and manage router, a Dockerized version of [laksa19/mikhmonv3](https://github.com/laksa19/mikhmonv3)
 
