@@ -93,10 +93,9 @@ document.getElementsByTagName("BODY")[0].onresize = function() {
     closeNav.style.display = "block";
 
     }
-}
+};
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
-
 
 // open close dropdown
 var dropdown = document.getElementsByClassName("dropdown-btn");
