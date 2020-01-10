@@ -9,7 +9,7 @@ Mikrotik Dashboard specially for Hotspot and manage router, a Dockerized version
 1. **Optional** : Create `.env` and set `APP_PORT`
 2. `docker-compose up --build`
 3. Open `http://localhost:<APP_PORT>`
-4. Login with **admin:admin**
+4. Login with Username : **admin**, Password : **admin**
 
 ## Changelog
 
