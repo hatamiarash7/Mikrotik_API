@@ -21,6 +21,8 @@ Mikrotik Dashboard specially for Hotspot and manage router, a Dockerized version
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D1WGU9)
 
+<div><a href="https://payping.ir/@hatamiarash7"><img src="https://cdn.payping.ir/statics/Payping-logo/Trust/blue.svg" height="128" width="128"></a></div>
+
 ## Contributing
 
 1. Fork it!  
